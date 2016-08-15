@@ -27,23 +27,22 @@ LocationTabView.prototype.load = function(index) {
 	console.log(left)
 	console.log(top)
 	
-//	$(window).resize(function(){
-//	console.log('xxxx')
-//	
-//	left = locationDiv.getBoundingClientRect().left + 'px'
-//
-//	top = locationDiv.getBoundingClientRect().bottom + 'px'
-//	
-//	
-//	
-//	})
+	$(window).resize(function(){
+	console.log('xxxx')
+	
+	left = locationDiv.getBoundingClientRect().left + 'px'
+
+	top = locationDiv.getBoundingClientRect().bottom + 'px'
+	
+	
+	//监听窗口变化
+	})
 	
 	if(this.$tab){
 		
 		this.$tab.show().css({
 		left: left,
-		top:top
-		})
+		top:top})
 		
 		return
 	}
@@ -54,7 +53,7 @@ LocationTabView.prototype.load = function(index) {
 		border: '1px solid silver',
 		backgroundColor: 'white',
 		position: 'absolute',
-		left:left,
+		left: left,
 		top:top
 
 	}).appendTo($('body')).append($("<ul class='cityList'>").css({
