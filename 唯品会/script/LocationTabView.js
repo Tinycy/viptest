@@ -27,9 +27,23 @@ LocationTabView.prototype.load = function(index) {
 	console.log(left)
 	console.log(top)
 	
+//	$(window).resize(function(){
+//	console.log('xxxx')
+//	
+//	left = locationDiv.getBoundingClientRect().left + 'px'
+//
+//	top = locationDiv.getBoundingClientRect().bottom + 'px'
+//	
+//	
+//	
+//	})
+	
 	if(this.$tab){
 		
-		this.$tab.show()
+		this.$tab.show().css({
+		left: left,
+		top:top
+		})
 		
 		return
 	}
@@ -40,8 +54,8 @@ LocationTabView.prototype.load = function(index) {
 		border: '1px solid silver',
 		backgroundColor: 'white',
 		position: 'absolute',
-		left: '100px',
-		top: '30px'
+		left:left,
+		top:top
 
 	}).appendTo($('body')).append($("<ul class='cityList'>").css({
 

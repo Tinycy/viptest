@@ -1,75 +1,72 @@
-//主题颜色
 @skinColor: #F10180;
-//基本字体
-@baseFontSize: 15px;
-//固定宽度
-@baseWidth: 1000px;
-
-//正常的文本颜色
+@baseFont: 15px;
+@space: 10vw;
 @normalTextColor: #666666;
+@baseWidth: 1000px;
 * {
     box-sizing: border-box;
 }
 html,
 body {
     height: 100%;
+    background-color: ghostwhite;
+    font-size: @baseFont;
+}
+body {
     margin: 0;
-    font-size: @baseFontSize;
+}
+#header {
     position: relative;
-    
 }
 .content {
     width: @baseWidth;
     height: 100%;
     margin: 0 auto;
-    //background-color: red;
+    position: relative;
 }
 .header-part1 {
     height: 30px;
-    background-color: #F5F5F5;
+    background-color: #E9E7E7;
+    line-height: 30px;
     .container1 {
-         a {
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-align: center;
-            line-height: 30px;
-            color: @normalTextColor;
-            
-        }
-        a:hover{
-            color: @skinColor;
-        }
+        background-color: inherit;
         .header-location {
-            width: 80px;
+            width: 90px;
             height: 100%;
-            //background-color: darkcyan;
-            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
             text-align: center;
         }
-        .header-user{
-            
-            list-style-type: none;
-            padding: 0;
-            display: inline-block;
+        .header-user {
+            height: 100%;
             margin: 0;
-            margin-left: 200px;
-            li{
+            position: absolute;
+            left: 200px;
+            top: 0;
+            li {
                 display: inline-block;
-  
-            }
-            
-            li:after{
-                
-                content: '/';
-                padding: 1rem;
-                font-size: 0.6rem;
-                color: lightgray;
+                margin: 0 0.8rem;
             }
         }
-       
     }
 }
-
+.header-user li,
+.header-location {
+    a {
+        color: @normalTextColor;
+        text-decoration: none;
+        font-size: 0.8rem;
+    }
+    a:hover {
+        color: @skinColor;
+    }
+}
+.header-user li:after {
+    content: '/';
+    color: lightgray;
+    font-size: 0.6rem;
+}
 .header-part2 {
     background-color: white;
     position: relative;
@@ -110,7 +107,6 @@ body {
         }
     }
 }
-
 .header-part3 {
     height: 40px;
     background-color: @skinColor;
@@ -158,6 +154,57 @@ body {
     background-position: left center;
     background-repeat: no-repeat;
 }
+.more-modal {
+    width: 610px;
+    height: 230px;
+    background-color: white;
+    box-shadow: 0 0 5px gray;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    ul {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+            float: left;
+            width: 170px;
+            height: 96px;
+            margin: 0 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            a {
+                display: block;
+                position: relative;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                }
+                p {
+                    position: absolute;
+                    left: 0;
+                    top: 25%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient( rgba(0,0,0,0.01), rgba(0,0,0,0.02), rgba(0,0,0,0.2), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+                    line-height: 96px;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.2rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
 .bgImg {
     height: 500px;
     position: relative;
@@ -176,4 +223,7 @@ body {
         border: 10px solid white;  
     }
     
+}
+.goods{
+   position: relative;
 }
